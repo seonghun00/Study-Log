@@ -18,9 +18,9 @@ Study logs on Robotics Kinematics, Linear Algebra, and Statistics.
 ---
 
 ## 📁 Directory Structure
-* [Kinematics](./기구학(Kinematics)/) - 기구학 공부 기록 (PDF)
-* [Linear-Algebra](./선형대수학(Linear-Algebra)/) - 선형대수학 공부 기록 (PDF)
-* [Statistics](./통계학(Statistics)/) - 통계학 공부 기록 (PDF)
+* [Kinematics](./기구학_(Kinematics)/) - 기구학 공부 기록 (PDF)
+* [Linear-Algebra](./선형대수학_(Linear-Algebra)/) - 선형대수학 공부 기록 (PDF)
+* [Statistics](./통계학_(Statistics)/) - 통계학 공부 기록 (PDF)
 
 ---
 © 2026 Seong-hun Bae.
