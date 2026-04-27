@@ -13,7 +13,8 @@ Study logs on Robotics Kinematics, Linear Algebra, and Statistics.
 | :--- | :--- |
 | **Kinematics**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 | **Linear Algebra**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
-| **Statistics**  |  ![Pending](https://img.shields.io/badge/Status-Pending-lightgrey) | 
+| **Statistics**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
+| **Docker**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 
 ---
 
