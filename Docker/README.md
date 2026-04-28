@@ -14,8 +14,7 @@
 ---
 
 ### 🔗 Quick Links
-- **[Docker 핵심 정리본 (Notion)](https://sugar-spider-af5.notion.site/Docker-34fecff302798093b11bf526c74a02a7?source=copy_link)**
-  - 기술적 정의, 볼륨 연동, ROS2 Humble 기반의 가상 노드 실행 및 Gazebo/MuJoCo 연동 설정
+- **Docker 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)]([URL](https://sugar-spider-af5.notion.site/Docker-34fecff302798093b11bf526c74a02a7?source=copy_link)) **"**
 
 > [!NOTE]
 > 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
