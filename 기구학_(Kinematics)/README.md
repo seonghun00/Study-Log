@@ -14,8 +14,7 @@
 ---
 
 ### 🔗 Quick Links
-- **[기구학 정리본 (Notion)](https://sugar-spider-af5.notion.site/34becff3027980ac93cec0227988e6c9?source=copy_link)**
-  - Link/Joint의 정의, URDF, End Effector 좌표, Joint 각도 기반 정기구학·역기구학 목표 구하기
+- **기구학 핵심 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/34becff3027980ac93cec0227988e6c9?source=copy_link) **"**
 
 > [!NOTE]
 > 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
