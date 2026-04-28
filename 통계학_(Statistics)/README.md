@@ -14,8 +14,7 @@
 ---
 
 ### 🔗 Quick Links
-- **[통계학 핵심 정리본 (Notion)](https://sugar-spider-af5.notion.site/34becff3027980f4bc75cf1c7600e033?source=copy_link)**
-  - 편차·분산·표준편차를 통한 데이터 분포 파악, Pandas 기반 센서 데이터 전처리 및 시각화를 통한 로봇 상태 리포트 작성 구현
+- **통계학 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/34becff3027980f4bc75cf1c7600e033?source=copy_link) **"**
 
 > [!NOTE]
 > 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
