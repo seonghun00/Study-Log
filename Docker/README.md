@@ -15,6 +15,7 @@
 
 ---
 
-<div align="right">
-  <sub>Copyright 2026. <b>Seong-hun Bae</b> All rights reserved.</sub><br>
+© 2026 Seong-hun Bae.
+All rights reserved.
+
 </div>
