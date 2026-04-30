@@ -17,7 +17,7 @@
 - **선형대수 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/34becff30279807a96c3d41328009a41?source=copy_link) **"**
 
 > [!NOTE]
-> 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
+> 참고용, 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
 
 ---
 
