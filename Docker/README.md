@@ -17,7 +17,7 @@
 - **Docker 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/Docker-34fecff302798093b11bf526c74a02a7?source=copy_link) **"**
 
 > [!NOTE]
-> 참고는 자유롭게, 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 X
+> 참고용, 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
 
 ---
 
