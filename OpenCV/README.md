@@ -16,6 +16,9 @@
 ### 🔗 Quick Links
 - **OpenCV 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/OpenCV-356ecff3027980f18107c7017379c468?source=copy_link) **"**
 
+> [!NOTE]
+> 참고용, 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
+
 ---
 
 <p>
