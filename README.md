@@ -3,7 +3,7 @@
 </p>
 
 # 📚 Study-Log
-Study logs on Robotics Kinematics, Linear Algebra, and Statistics.
+Study logs on Robotics Kinematics, Linear Algebra, Statistics and etc.
 
 ---
 
@@ -16,6 +16,8 @@ Study logs on Robotics Kinematics, Linear Algebra, and Statistics.
 | **Statistics**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 | **Docker**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 | **OpenCV**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
+| **SLAM,Nav2,MoveIt2,Gazebo**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
+
 
 ---
 
@@ -25,6 +27,7 @@ Study logs on Robotics Kinematics, Linear Algebra, and Statistics.
 * [Statistics](./통계학_(Statistics)/) - 통계학 공부 기록 (PDF)
 * [Docker](./Docker/) - Docker 공부 기록 (PDF)
 * [OpenCV](./OpenCV/) - OpenCV 공부 기록 (PDF)
+* [SLAM,Nav2,MoveIt2,Gazebo](./SLAM_Nav2_MoveIt2_Gazebo/) - SLAM,Nav2,MoveIt2,Gazebo 공부 기록 (PDF)
 
 ---
 © 2026 Seong-hun Bae.
