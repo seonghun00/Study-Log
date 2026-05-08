@@ -3,11 +3,12 @@
     <img src="https://img.shields.io/badge/Notion-Study--Log-000000?style=for-the-badge&logo=notion&logoColor=white" />
   </a>
 
-  # 📐 Linear Algebra Technical Log
-  **로봇 좌표계 이해를 위한 선형대수 기초 및 벡터 연산 로그**
+  # 📐 Linear Algebra Study Log
+  **로봇 좌표계 이해를 위한 선형대수 기초 및 벡터 학습 기록**
 </div>
 
 ## 📌 Focus
+이 스터디 로그는 로봇의 좌표 변환과 상태 추정의 기반이 되는 벡터 및 행렬 연산과 코드를 정리합니다.
 - **좌표 변환**: 라이다(LiDAR) 센서 데이터나 지도상의 장애물 위치를 로봇 및 전역 좌표계로 변환하기 위한 선형대수적 소통 방식 이해 
 - **방향성 판단**: 두 벡터의 내적($cos\theta$) 값을 활용하여 로봇이 마주한 객체와의 상대적인 방향 관계(동일, 직각, 반대)를 수치화 
 
