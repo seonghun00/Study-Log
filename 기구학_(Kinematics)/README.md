@@ -3,11 +3,12 @@
     <img src="https://img.shields.io/badge/Notion-Study--Log-000000?style=for-the-badge&logo=notion&logoColor=white" />
   </a>
 
-  # 🦾 Robot Kinematics Technical Log
-  **정기구학 & 역기구학 원리 및 코드 구현 로그**
+  # 🦾 Robot Kinematics Study Log
+  **정기구학 & 역기구학 원리 및 코드 학습 기록**
 </div>
 
 ## 📌 Focus
+이 스터디 로그는 관절의 회전과 이동에 따른 로봇의 위치 및 자세 해석 방법과 코드들을 정리합니다.
 - **정기구학(FK)**: 관절 각도값이 주어졌을 때 로봇 끝점(TCP)의 위치와 자세를 계산
 - **역기구학(IK)**: 목표 위치 도달을 위해 필요한 관절 각도를 산출하며 다중 해 존재 가능성을 고려
 
