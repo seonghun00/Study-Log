@@ -3,11 +3,12 @@
     <img src="https://img.shields.io/badge/Notion-Study--Log-000000?style=for-the-badge&logo=notion&logoColor=white" />
   </a>
 
-  # 🤖 SLAM, Nav2, MoveIt2 Technical Log
-  **ROS2 기반 로봇 제어(SLAM, Nav2, MoveIt2) 통합 로그**
+  # 🤖 SLAM, Nav2, MoveIt2 Study Log
+  **ROS2 기반 로봇 제어(SLAM, Nav2, MoveIt2) 학습 기록**
 </div>
 
 ## 📌 Focus
+이 스터디 로그는 로봇의 지도 작성, 자율 주행, 그리고 관절 제어 스택의 적용 방법을 정리합니다.
 - **SLAM**: 실시간 지도 작성 및 정밀 자기 위치 추정
 - **Nav2**: 장애물 회피를 포함한 최적 경로 주행 제어
 - **MoveIt2**: 로봇 팔 및 관절의 충돌 방지 모션 계획
