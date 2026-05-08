@@ -18,7 +18,8 @@
 - **기구학 핵심 정리본 (Notion)** &nbsp; ➔ &nbsp; **"** [![Notion](https://img.shields.io/badge/Open_Notion-000000?style=flat&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/34becff3027980ac93cec0227988e6c9?source=copy_link) **"**
 
 > [!NOTE]
-> 참고용, 디자인 레이아웃 유지를 위해 노션 원본 링크로 공유하며, 무단 복제는 허용하지 않습니다.
+> 실시간 업데이트되는 노션 원본이 PDF보다 최신 상태입니다.  
+> 레이아웃 유지 및 무단 복제 방지를 위해 링크로 공유합니다.
 
 ---
 
