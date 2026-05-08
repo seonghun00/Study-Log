@@ -17,8 +17,8 @@ Study logs on Robotics Kinematics, Linear Algebra, Statistics and etc.
 | **Docker**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 | **OpenCV**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 | **Python/C++**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
-| **SLAM,Nav2,MoveIt2**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
-| **Gazebo,MuJoCo**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
+| **SLAM/Nav2/MoveIt2**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
+| **Gazebo/MuJoCo**  |  ![In Progress](https://img.shields.io/badge/Status-In_Progress-orange) | 
 
 
 ---
@@ -30,8 +30,8 @@ Study logs on Robotics Kinematics, Linear Algebra, Statistics and etc.
 * [Docker](./Docker/) - Docker 공부 기록 (PDF)
 * [OpenCV](./OpenCV/) - OpenCV 공부 기록 (PDF)
 * [Python/C++](./Python_C++/) - Python/C++ 공부 기록 (PDF)
-* [SLAM,Nav2,MoveIt2](./SLAM_Nav2_MoveIt2/) - SLAM,Nav2,MoveIt2 공부 기록 (PDF)
-* [Gazebo,MuJoCo](./Gazebo_MuJoCo/) - Gazebo,MuJoCo 공부 기록 (PDF)
+* [SLAM/Nav2/MoveIt2](./SLAM_Nav2_MoveIt2/) - SLAM,Nav2,MoveIt2 공부 기록 (PDF)
+* [Gazebo/MuJoCo](./Gazebo_MuJoCo/) - Gazebo,MuJoCo 공부 기록 (PDF)
 
 ---
 © 2026 Seong-hun Bae.
