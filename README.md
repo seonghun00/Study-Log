@@ -3,7 +3,7 @@
 </p>
 
 # 📚 Study-Log
-Study logs on Robotics Kinematics, Linear Algebra, Statistics and docker, opencv python.
+Study logs on Robotics Kinematics, Linear Algebra, Statistics and etc.
 
 ---
 
