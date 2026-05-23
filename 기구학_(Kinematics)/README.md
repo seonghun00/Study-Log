@@ -24,5 +24,5 @@
 ---
 
 <p>
-  © 2026 Seong-hun Bae. &nbsp; All rights reserved.
+  <i>© 2026 Seong-hun Bae. &nbsp; All rights reserved.</i>
 </p>
