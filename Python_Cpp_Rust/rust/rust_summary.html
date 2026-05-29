@@ -101,13 +101,40 @@ fn add_speed(a: i32, b: i32) -> i32 { <span class="comment">// -> 뒤에 반환�
         <li><strong>슬라이스 (Slice)</strong>: 원본 데이터를 복사하지 않고, 배열의 특정 일부분만 안전하게 빌려서 가리키는 기능임.</li>
     </ul>
     <pre>
-<span class="comment">// 조건식, 반복 범위 및 슬라이스 활용 예시</span>
-if value > 0 { println!("정상"); } <span class="comment">// 무조건 참/거짓이 나오는 비교식 작성 </span>
+fn main() {
+    <span class="comment">// 1. 엄격한 if 조건문</span>
+    let value = 1;
+    <span class="comment">// if value { ... } -> 에러! C/C++과 달리 조건식은 반드시 bool(참/거짓) 타입이어야 함</span>
+    if value > 0 { 
+        println!("정상 구동"); 
+    }
 
-for i in 1..4 { ... } <span class="comment">// 끝 숫자 4를 제외한 1, 2, 3 순회 </span>
+    <span class="comment">// 2. 세 가지 반복문 구조</span>
+    <span class="comment">// loop (무한 반복, break로 탈출)</span>
+    let mut count = 0;
+    loop {
+        count += 1;
+        if count == 3 { break; } <span class="comment">// 반복 종료</span>
+    }
 
-let lidar_array = [10, 20, 30, 40];
-let part: &[i32] = &lidar_array[1..3]; <span class="comment">// 1번 방부터 2번 방까지 빌려오기 (&[20, 30]) </span>
+    <span class="comment">// while (조건이 참인 동안 반복)</span>
+    while count > 0 { count -= 1; }
+
+    <span class="comment">// for (정해진 범위나 배열 순회)</span>
+    <span class="comment">// 0..5는 0부터 4까지 순회하며 끝값(5)은 포함하지 않음</span>
+    for i in 0..5 { println!("{}", i); }
+
+    <span class="comment">// 3. 고정 길이 데이터 구조: 배열 vs 튜플</span>
+    let lidar_array: [i32; 3] = [10, 20, 30]; <span class="comment">// 배열: '동일한 타입'의 데이터 집합</span>
+    let robot_tuple = ("TurtleBot", 0.5, true); <span class="comment">// 튜플: '서로 다른 타입'을 묶음</span>
+    
+    println!("Array [1]: {}", lidar_array[1]); <span class="comment">// 인덱스는 0부터 시작</span>
+    println!("Tuple .0: {}", robot_tuple.0);   <span class="comment">// 점(.) 기호와 순서 번호로 접근</span>
+
+    <span class="comment">// 4. 슬라이스 (&)</span>
+    <span class="comment">// 데이터 복사 없이 배열이나 벡터의 '일부 구간을 안전하게 참조(빌림)'하는 타입</span>
+    let part: &[i32] = &lidar_array[1..3]; <span class="comment">// 1번 방부터 2번 방까지 빌려오기 (&[20, 30]) </span>
+}
     </pre>
 
     <h3>③ 소유권(Ownership), 이동(Move), 복사(Copy), 참조(Borrowing)</h3>
@@ -138,17 +165,27 @@ let r = &mut speed;  <span class="comment">// 고칠 수 있는 권한을 r 변�
     <h3>④ 구조체(Struct), 열거형(Enum), 매치(Match), Option, Result</h3>
     <p>연관된 데이터를 묶고, 여러 상황이나 실패 가능성을 안전하게 나누어 처리하는 도구다.</p>
     <pre>
-struct Robot { name: String, mode: RobotMode } <span class="comment">// 구조체: 이름, 상태 등 여러 데이터를 하나로 묶기 </span>
+<span class="comment">// 구조체: 이름, 상태 등 여러 데이터를 하나로 묶기</span>
+struct Robot {
+    name: String,
+    mode: RobotMode,
+}
 
-enum RobotMode { Idle, Moving, Error }         <span class="comment">// 열거형: 정해진 몇 가지 상태 선택지 정의 </span>
+<span class="comment">// 열거형: 정해진 몇 가지 상태 선택지 정의</span>
+enum RobotMode {
+    Idle,
+    Moving,
+    Error,
+}
 
-impl Robot {                                   <span class="comment">// impl: 구조체에 사용할 함수(기능)들을 모아두는 곳 </span>
-    fn check_mode(&self) {                     <span class="comment">// &self: 내 로봇 데이터를 읽기 전용으로 가져옴 </span>
-        // match: 열거형에 있는 모든 상태를 빠짐없이 처리하도록 컴파일러가 강제함
-        match self.mode {                      <span class="comment">// 하나라도 조건 처리를 빼먹으면 에러가 남 </span>
+<span class="comment">// impl 블록: 특정 구조체나 열거형에 메서드(기능)를 정의하는 영역</span>
+impl Robot {
+    fn check_mode(&self) { <span class="comment">// &self: 내 로봇 데이터를 읽기 전용 참조로 가져옴 </span>
+        <span class="comment">// match 구문: 하나라도 조건 처리를 빼먹으면 에러가 남 </span>
+        match self.mode {
             RobotMode::Idle => println!("대기"),
             RobotMode::Moving => println!("이동"),
-            RobotMode::Error => println!("에러 발생!"), 
+            RobotMode::Error => println!("에러 발생!"), <span class="comment">// 상태 처리를 빼먹으면 빌드가 안 됨</span>
         }
     }
 }
@@ -162,21 +199,21 @@ impl Robot {                                   <span class="comment">// impl: �
     <h3>⑤ 동적 배열(Vec), 문자열(String), 트레이트(Trait), 임플(Impl), 모듈, Cargo</h3>
     <p>개수가 계속 변하는 데이터를 다루고 프로젝트를 만들어 빌드하는 단계다.</p>
     <pre>
-// 트레이트(Trait): 여러 구조체들이 공통으로 가져야 할 동작 규격을 약속함 
-trait Sensor { 
-    fn read_data(&self) -> Result<Vec<f64>, String>; 
+<span class="comment">// 1. 트레이트(Trait): 여러 구조체들이 공통으로 가져야 할 동작 규격을 약속함</span>
+trait Sensor {
+    fn read_data(&self) -> Result<Vec<f64>, String>; <span class="comment">// 성공 시 동적배열, 실패 시 에러문구</span>
 }
 
-struct Lidar { topic_name: String } // String: 글자를 추가하고 고칠 수 있는 문자열 타입 
+struct Lidar { topic_name: String } <span class="comment">// String: 글자를 추가하고 고칠 수 있는 문자열 타입</span>
 
-// impl 트레이트명 for 구조체명: 약속한 공통 규칙대로 기능을 구현함 
+<span class="comment">// impl 트레이트명 for 구조체명: 약속한 공통 규칙대로 기능을 구현함</span>
 impl Sensor for Lidar {
     fn read_data(&self) -> Result<Vec<f64>, String> {
-        // Vec&lt;T&gt;: 개수가 자유롭게 늘어나는 동적 배열 (LiDAR 센서 여러 거리값 저장에 적합) 
-        let mut ranges = vec![1.2, 1.5, 2.0]; <span class="comment">// vec!: 동적 배열을 쉽게 만드는 매크로 </span>
-        ranges.push(0.8);                     <span class="comment">// 값 추가하기. 값을 변경하므로 변수 선언에 mut 필수 </span>
+        <span class="comment">// Vec&lt;T&gt;: 길이가 자유롭게 늘어나는 동적 배열 (LiDAR 다중 거리값 처리에 적합)</span>
+        let mut ranges = vec![1.2, 1.5, 2.0]; <span class="comment">// vec!: 동적 배열을 쉽게 만드는 매크로</span>
+        ranges.push(0.8);                     <span class="comment">// 값 추가하기. 값을 변경하므로 변수 선언에 mut 필수</span>
         
-        Ok(ranges)
+        Ok(ranges) <span class="comment">// 성공 결과 반환</span>
     }
 }
     </pre>
