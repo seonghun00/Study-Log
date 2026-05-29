@@ -3,6 +3,7 @@
 #### 1. [BUILD] 환경 구축 및 패키지 설치
 * [ERROR 1: Dockerfile 패키지 설치 오타 및 줄바꿈 에러](#dockerfile-패키지-설치-오타-및-줄바꿈-에러)
 * [ERROR 2: colcon 명령어를 찾을 수 없음](#colcon-명령어를-찾을-수-없음)
+* [ERROR 3: pip install MuJoCo 패키지명 버전 기호 에러](#pip-install-mujoco-패키지명-버전-기호-에러)
 
 #### 2. [RUN] 컨테이너 및 소스코드 실행
 * [ERROR 1: URDF 파일 경로 불일치](#urdf-파일-경로-불일치)
@@ -22,7 +23,12 @@
 #### colcon 명령어를 찾을 수 없음
 | 에러 화면 (Error Image) | 에러 사항 분석 및 해결 방법 (Description & Solution) |
 | :---: | :--- |
-| *(터미널 캡처 사진)* | **🚨 ERROR 3: colcon 명령 미설치**<br><br>• **문제:** ROS2 빌드 툴인 `colcon`이 컨테이너에 설치되어 있지 않음<br>• **로그:** `bash: colcon: command not found`<br>• **해결:** 터미널에 아래 명령어를 실행하여 설치<br>`pip install -U colcon-common-extensions` |
+| <img width="408" height="36" alt="image" src="https://github.com/user-attachments/assets/f60b5833-4722-4b1c-901e-dbc8448124d6" /> | **🚨 ERROR 2-2: colcon 명령 미설치**<br><br>• **문제:** ROS2 빌드 툴인 `colcon`이 컨테이너에 설치되어 있지 않음<br>• **로그:** `bash: colcon: command not found`<br>• **해결:** 터미널에 아래 명령어를 실행하여 설치<br>`pip install -U colcon-common-extensions` |
+
+#### pip install MuJoCo 패키지명 버전 기호 에러
+| 에러 화면 (Error Image) | 에러 사항 분석 및 해결 방법 (Description & Solution) |
+| :---: | :--- |
+| <img width="469" height="144" alt="image" src="https://github.com/user-attachments/assets/101fc324-832c-482f-9c1f-baf5c16303cb" /> | **🚨 ERROR 3: 패키지 버전 지정 기호 오류**<br><br>• **문제:** `mujoco` 버전 지정 시 `==` 대신 `--`를 잘못 사용함<br>• **로그:** `ERROR: Could not find a version that satisfies the requirement mujoco--3.6.0`<br>• **해결:** 대시 기호를 지우고 공백과 동등 기호를 조합하여 `pip install mujoco==3.6.0`으로 수정하여 실행 |
 
 ---
 
