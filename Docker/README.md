@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🐳 Docker & ROS2 Study Log
+# 🐳 Docker Study Log
 
-**Docker 기반 ROS2 & 로봇 제어 공부 기록 (Notion)**
+**Docker 기반 로봇 제어 공부 기록 (Notion)**
 
 <br>
 
