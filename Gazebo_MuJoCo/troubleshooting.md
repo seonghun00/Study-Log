@@ -6,6 +6,7 @@
 
 #### 2. [RUN] 컨테이너 및 소스코드 실행
 * [ERROR 1: URDF 파일 경로 불일치](#urdf-파일-경로-불일치)
+* [ERROR 2: MuJoCo 실린더 바퀴의 기본 축 방향으로 인한 비정상 주행](#mujoco-실린더-바퀴의-기본-축-방향으로-인한-비정상-주행)
 
 #### 3. [LINK] GUI 화면 표시 및 로봇 연동
 * *(추후 에러 발생 시 추가 예정)*
@@ -32,6 +33,11 @@
 | 에러 화면 (Error Image) | 에러 사항 분석 및 해결 방법 (Description & Solution) |
 | :---: | :--- |
 | <img width="719" height="205" alt="image" src="https://github.com/user-attachments/assets/6b4e2c0e-d5bd-48c5-9b84-f3ec29e55905" /> | **🚨 ERROR : URDF 경로 오류**<br><br>• **문제:** 실제 위치(`mujoco_ws`)와 코드 내 경로(`ros2_ws`)가 다름<br>• **로그:** `No such file or directory`<br>• **해결:** 코드를 **`mujoco_ws`**로 수정 |
+
+#### MuJoCo 실린더 바퀴의 기본 축 방향으로 인한 비정상 주행
+| 에러 화면 (Error Image) | 에러 사항 분석 및 해결 방법 (Description & Solution) |
+| :---: | :--- |
+| <img width="370" height="200" alt="Mujoco_-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/4d2fbae5-3760-4b0a-b292-f67cd189fe59" /> | **🚨 ERROR : 실린더 축 설정 누락으로 인한 구동 불량**<br><br>• **문제:** MuJoCo `cylinder`는 기본 축이 $z$축(위아래) 정렬임. 회전 없이 배치 시 밑면이 바닥을 향해 누워있어 정상 주행이 불가능하고 망둥어 같이 움직임.<br>• **해결:** `geom` 속성에 **`euler="90 0 0"`**을 추가하여 $x$축 기준 $90^\circ$ 회전시킴. 이에 맞춰 바퀴 `body`의 **`pos` 좌표**를 조절해 몸통 간섭을 해결하고 조립 완성. |
 
 ---
 
