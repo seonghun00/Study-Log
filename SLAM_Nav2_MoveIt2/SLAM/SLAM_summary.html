@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>SLAM 요약 정리본</title>
+<style>
+  body {
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'NanumGothic', 'Noto Sans KR', sans-serif;
+    color: #334155;
+    margin: 40px auto;
+    padding: 0 20px;
+    max-width: 800px;
+    line-height: 1.6;
+    font-size: 11pt;
+    background-color: #f8fafc;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  
+  .header-container {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 35px 25px;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #0ea5e9;
+  }
+  .header-container h1 { margin: 0; font-size: 22pt; font-weight: bold; }
+  .header-container p { margin: 8px 0 0 0; font-size: 11pt; color: #94a3b8; }
+  
+  .content-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    font-size: 14pt;
+    color: #0f172a;
+    border-left: 5px solid #0ea5e9;
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  p, ul { margin-top: 0; margin-bottom: 15px; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  
+  .highlight { font-weight: bold; color: #0284c7; }
+  code {
+    font-family: Consolas, Monaco, monospace;
+    background-color: #e2e8f0;
+    color: #0f172a;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 10pt;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+    font-size: 10.5pt;
+  }
+  th { background-color: #1e293b; color: #ffffff; font-weight: bold; }
+  tr:nth-child(even) td { background-color: #f1f5f9; }
+  
+  .tf-container {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  .tf-node {
+    display: inline-block;
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  .tf-arrow {
+    display: inline-block;
+    margin: 0 10px;
+    color: #0ea5e9;
+    font-weight: bold;
+    font-size: 14pt;
+  }
+  
+  .callout {
+    background-color: #fff7ed;
+    border-left: 4px solid #f97316;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout-title { font-weight: bold; color: #ea580c; margin-bottom: 8px; }
+  
+  .trouble-section {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .question { font-weight: bold; color: #b91c1c; margin-bottom: 10px; font-size: 11.5pt; }
+  .answer { color: #334155; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div class="header-container">
+  <h1>SLAM 기술 요약 정리본</h1>
+  <p>Simultaneous Localization And Mapping 및 ROS2 기반 자율주행 파이프라인 핵심 정리</p>
+</div>
+
+<div class="content-container">
+  <h2>1. SLAM의 기본 개념</h2>
+  <ul>
+    <li><span class="highlight">SLAM의 정의:</span> Simultaneous Localization And Mapping (동시적 위치 추정 및 지도 작성)을 의미함.</li>
+    <li><span class="highlight">핵심 목적:</span> 로봇이 처음 마주하는 미지의 환경에서 탑재된 센서를 활용하여 지도를 생성함과 동시에, 해당 지도 내부에서 자신의 현재 위치 및 자세를 실시간으로 파악하는 기술임.</li>
+    <li><span class="highlight">주요 센서:</span> 2D 평면 실내 맵핑 환경에서는 주변 물체와의 거리를 정밀하게 측정할 수 있는 <span class="highlight">2D LiDAR 센서</span>가 가장 널리 사용됨.</li>
+  </ul>
+
+  <h2>2. ROS2 핵심 토픽과 데이터 흐름</h2>
+  <p>로봇의 인지 및 제어 프로세스는 정해진 표준 규격(메시지 타입)의 데이터를 상호 송수신하며 수행됨.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>역할</th>
+        <th>토픽 이름</th>
+        <th>메시지 타입</th>
+        <th>설명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>LiDAR 스캔</strong></td>
+        <td><code>/scan</code></td>
+        <td><code>LaserScan</code></td>
+        <td>로봇의 '눈'에 해당함. 주변 장애물까지의 방향별 거리 데이터 스트림임.</td>
+      </tr>
+      <tr>
+        <td><strong>이동 추정</strong></td>
+        <td><code>/odom</code></td>
+        <td><code>Odometry</code></td>
+        <td>로봇의 '발'에 해당함. 바퀴 회전량 등으로 추정한 이동 거리이며 오차 누적에 유의해야 함.</td>
+      </tr>
+      <tr>
+        <td><strong>속도 제어</strong></td>
+        <td><code>/cmd_vel</code></td>
+        <td><code>Twist</code></td>
+        <td>로봇의 '근육'에 해당함. 전진, 후진 및 회전 명령을 전달하는 데이터임.</td>
+      </tr>
+      <tr>
+        <td><strong>지도 데이터</strong></td>
+        <td><code>/map</code></td>
+        <td><code>OccupancyGrid</code></td>
+        <td>SLAM을 통해 최종 완성된 2D 격자 지도 데이터임.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. 좌표계 (TF) 뼈대 구조</h2>
+  <p>SLAM 시스템의 가장 중요한 물리적 뼈대이며, 로봇 각 부위와 센서 간의 공간적 연결 관계를 명시함.</p>
+
+  <div class="tf-container">
+    <div class="tf-node">map</div>
+    <div class="tf-arrow">➔</div>
+    <div class="tf-node">odom</div>
+    <div class="tf-arrow">➔</div>
+    <div class="tf-node">base_link</div>
+    <div class="tf-arrow">➔</div>
+    <div class="tf-node">laser</div>
+  </div>
+
+  <ul>
+    <li><strong>map:</strong> 완성된 지도의 절대 기준이 되는 최상위 좌표계임.</li>
+    <li><strong>odom:</strong> 단시간 동안 부드럽게 이어지는 로봇 주행 이동의 출발 기준 좌표계임.</li>
+    <li><strong>base_link:</strong> 로봇 본체(몸통)의 물리적 중심을 나타내는 좌표계임.</li>
+    <li><strong>laser:</strong> LiDAR 센서가 실제 장착된 물리적 위치의 좌표계임.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title">⚠️ 주의사항</div>
+    <div><code>/scan</code> 데이터가 정상 수신되더라도, <code>base_link</code>와 <code>laser</code> 사이의 공간적 위치 관계(TF 변환)가 정의되지 않으면 지도를 생성할 수 없음.</div>
+  </div>
+
+  <h2>4. 지도 작성 (Mapping) - SLAM Toolbox</h2>
+  <p>ROS2 Humble 환경에서 표준적으로 사용되는 실무용 2D SLAM 패키지임.</p>
+  <ul>
+    <li><strong>비동기 모드 실행:</strong> 주로 <code>online_async_launch.py</code>를 실행함. 센서 데이터 수신 주기와 지도 연산 주기가 완벽히 일치하지 않아도 누락 없이 유연하게 지도를 생성하는 방식임.</li>
+    <li><strong>시뮬레이션 환경 (Gazebo):</strong> 가상 환경 실습 시 현실 시간과 가상 시간의 불일치로 인한 오류(Extrapolation Error)를 방지하기 위해 반드시 <code>use_sim_time:=true</code> 옵션을 적용해야 함.</li>
+  </ul>
+
+  <h2>5. 지도 저장 및 활용</h2>
+  <p>SLAM을 통해 작성된 지도를 자율주행 알고리즘에 적용하기 위해 파일 형태로 스토리지에 저장함.</p>
+  <ul>
+    <li><strong>저장 명령어:</strong> <code>nav2_map_server</code> 패키지의 <code>map_saver_cli</code> 유틸리티 기능을 사용함.</li>
+    <li><strong>생성 파일 종류 (2종):</strong>
+      <ul>
+        <li><code>.pgm</code> 파일: 눈으로 확인 가능한 흑백 격자 지도 이미지 파일임. (흰색: 빈 공간, 검은색: 벽/장애물, 회색: 미탐색 영역)</li>
+        <li><code>.yaml</code> 파일: 지도의 픽셀당 물리적 해상도(resolution), 원점 위치(origin) 등 메타데이터가 기록된 설정 파일이며, 지도 로드 시 필수적임.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>6. 자율주행 (Nav2) 파이프라인</h2>
+  <p>구축된 지도를 기반으로 로봇이 목적지까지 스스로 안전하게 주행하는 전체 흐름임.</p>
+  <ul>
+    <li><strong>1단계 (지도 작성 및 저장):</strong> SLAM 기술을 활용하여 지도를 생성하고 파일로 영구 저장함.</li>
+    <li><strong>2단계 (지도 불러오기):</strong> <code>map_server</code> 노드를 통해 저장된 지도 데이터를 ROS2 인프라 상에 표출함.</li>
+    <li><strong>3단계 (초기 위치 추정 - AMCL):</strong> RViz2 시각화 툴의 '2D Pose Estimate' 도구를 사용하여 지도 데이터 위 로봇의 실제 초기 위치와 정렬 방향을 수동으로 보정함.</li>
+    <li><strong>4단계 (경로 계획 및 주행 - Nav2):</strong> RViz2의 '2D Goal Pose' 도구로 최종 목적지를 지정하면, 내비게이션 스택이 최적 경로를 연산하여 <code>/cmd_vel</code> 제어 플로우를 발생시키며 목적지까지 이동함.</li>
+  </ul>
+
+  <h2>7. 실무 트러블슈팅 (자주 묻는 문제)</h2>
+
+  <div class="trouble-section">
+    <div class="question">Q. 지도의 벽면이 두 겹으로 겹쳐 보이거나 형태가 찌그러지는 현상</div>
+    <div class="answer">
+      <strong>원인:</strong> 로봇의 급격한 조종 또는 과도한 급회전으로 인해 바퀴 오도메트리(<code>/odom</code>) 오차가 한계치 이상으로 누적된 결과임.<br>
+      <strong>해결:</strong> 지도 작성 시에는 로봇을 최대한 저속으로 제어하며 부드럽게 주행해야 함.
+    </div>
+  </div>
+
+  <div class="trouble-section">
+    <div class="question">Q. <code>/scan</code> 데이터는 정상 표출되나 <code>/map</code>(지도) 데이터가 생성되지 않는 현상</div>
+    <div class="answer">
+      <strong>원인:</strong> 시스템 내 TF 좌표계 뼈대 단절이 주된 원인임. 특히 <code>laser</code> 프레임에 대한 연결 구조 정보가 유실되었는지 점검이 필요함.
+    </div>
+  </div>
+
+  <div class="trouble-section">
+    <div class="question">Q. 유리문이나 거울 구간을 통과할 때 지도가 왜곡되는 현상</div>
+    <div class="answer">
+      <strong>원인:</strong> LiDAR 센서 레이저 광선의 유리 투과 및 거울 반사 특성으로 인해 정확한 거리 측정이 불가능한 센서 자체의 물리적 한계 때문임.
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
