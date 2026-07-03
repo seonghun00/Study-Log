@@ -1,12 +1,12 @@
 <div align="center">
 
-# 🤖 Machine Learning Study Log
+# 🖥️ Python / C++ / Rust Study Log
 
-**지도학습 기초 및 머신러닝 데이터 분석 과정 공부 기록 (Notion)**
+**프로그래밍 언어 기초 및 로봇 소프트웨어 공부 기록 (Notion)**
 
 <br>
 
-[![Notion](https://img.shields.io/badge/Open_Notion_Study_Log-000000?style=for-the-badge&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/381ecff30279809a90f4dfd1ae50e330?source=copy_link)
+[![Notion](https://img.shields.io/badge/Open_Notion_Study_Log-000000?style=for-the-badge&logo=notion&logoColor=white)](https://sugar-spider-af5.notion.site/Python-C-Rust-359ecff30279802c943ae9d4c6472725?source=copy_link)
 
 </div>
 
