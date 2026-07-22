@@ -26,15 +26,15 @@ Study logs on Robotics Kinematics, Linear Algebra, Statistics and etc.
 ---
 
 ## 📁 Directory Structure
-* [Kinematics](./기구학_(Kinematics)/) - 기구학 공부 기록 (PDF)
-* [Linear-Algebra](./선형대수학_(Linear-Algebra)/) - 선형대수학 공부 기록 (PDF)
-* [Statistics](./통계학_(Statistics)/) - 통계학 공부 기록 (PDF)
-* [Docker](./Docker/) - Docker 공부 기록 (PDF)
-* [OpenCV](./OpenCV/) - OpenCV 공부 기록 (PDF)
-* [Python/C++/Rust](./Python_Cpp_Rust/) - Python/C++ 공부 기록 (PDF)
-* [ROS2](./ROS2/) - ROS2 공부 기록 (PDF)
-* [SLAM/Nav2/MoveIt2](./SLAM_Nav2_MoveIt2/) - SLAM,Nav2,MoveIt2 공부 기록 (PDF)
-* [Gazebo/MuJoCo](./Gazebo_MuJoCo/) - Gazebo,MuJoCo 공부 기록 (PDF)
+* [Kinematics](./기구학_(Kinematics)/) - 기구학 공부 기록
+* [Linear-Algebra](./선형대수학_(Linear-Algebra)/) - 선형대수학 공부 기록
+* [Statistics](./통계학_(Statistics)/) - 통계학 공부 기록
+* [Docker](./Docker/) - Docker 공부 기록
+* [OpenCV](./OpenCV/) - OpenCV 공부 기록
+* [Python/C++/Rust](./Python_Cpp_Rust/) - Python/C++ 공부 기록
+* [ROS2](./ROS2/) - ROS2 공부 기록
+* [SLAM/Nav2/MoveIt2](./SLAM_Nav2_MoveIt2/) - SLAM,Nav2,MoveIt2 공부 기록
+* [Gazebo/MuJoCo](./Gazebo_MuJoCo/) - Gazebo,MuJoCo 공부 기록
 
 ---
 <p>
